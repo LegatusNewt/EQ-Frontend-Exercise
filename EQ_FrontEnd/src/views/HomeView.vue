@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '@/components/TheWelcome.vue'
+import Graph from '/src/components/Graph.vue'
+import Table from '/src/components/Table.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <Table/>
+    <Graph/>
+  </div>
 </template>
