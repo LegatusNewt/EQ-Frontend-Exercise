@@ -2,24 +2,10 @@ import { createStore } from 'vuex'
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import App from './App.vue'
+import store from './store'
 import router from './router'
 import './assets/main.css'
 
-const store = createStore({
-    state: {
-        data: []
-    },
-    mutations: {
-        updateData(state, newData) {
-
-        }
-    },
-    actions: {
-        getData({ commit }, x) {
-            
-        }
-    }
-});
 
 const app = createApp(App)
 
