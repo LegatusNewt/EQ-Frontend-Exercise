@@ -7,7 +7,7 @@ const store = createStore({
         start: 0,
         data: [],
         newData: null,
-        showGraph: false,
+        showGraph: true,
         showTable: false,
     },
     actions: {

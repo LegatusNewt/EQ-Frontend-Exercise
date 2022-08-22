@@ -1,6 +1,21 @@
 <script>
 export default {
   name: 'Home',
+  data() {
+    return { 
+      window: {
+        width: 0,
+        height: 0,
+      }
+    };
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   computed: {
     showGraph() {
       return this.$store.state.showGraph;
@@ -15,6 +30,10 @@ export default {
     },
     toggleTable() {
       this.$store.commit("toggleTable");
+    },
+    handleResize() {
+      this.window.width = window.innerWidth;
+      this.window.height = window.innerHeight;
     }
   }
 }
@@ -29,7 +48,8 @@ export default {
       <div>
         <Table v-show="showTable" class="table-item"/>
       </div>
-      <Divider v-show="showTable && showGraph" class="table-divder" layout="vertical"/>
+      <Divider v-show="showTable && showGraph && this.window.width > 830" class="table-divder" layout="vertical"/>
+      <Divider v-show="showTable && showGraph && this.window.width < 830" class="table-divder" layout="horizontal"/>
       <div>
         <Graph v-show="showGraph" class="table-item"/>
       </div>

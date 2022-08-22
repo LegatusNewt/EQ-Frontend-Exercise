@@ -1,5 +1,5 @@
 <template>
-    <DataTable ref="tableRef" :value="tableData" :virtual-scroller="true" :scrollable="true" scrollHeight="50vh">
+    <DataTable ref="tableRef" :value="tableData" :virtual-scroller="true" :scrollable="true" scrollHeight="40vh">
         <Column field="x" header="X"/>
         <Column field="y" header="Y"/>
     </DataTable>
@@ -25,7 +25,3 @@
         }
     }
 </script>
-
-<style>
-
-</style>

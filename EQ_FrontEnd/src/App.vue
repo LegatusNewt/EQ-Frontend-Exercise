@@ -3,7 +3,7 @@ export default {
   name: 'App',
   mounted() {
     this.connect();
-  },
+  },  
   methods: {
     connect(){
       this.$store.dispatch("connect")      

@@ -1,9 +1,16 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 #app {
   width: 100vw;
-  padding: 2rem;  
+  height: 100vh;
+  position: fixed;
+  padding: 1rem;
   font-weight: normal;
-  display: inline-block;
-  max-height: 100vh;
+  display: inline-block;  
 }
 
 nav {
@@ -11,32 +18,33 @@ nav {
 }
 
 .tb-item {
-  margin: 1rem;
+  margin: 1vh;
 }
 
 .wrapper .a {
-  margin: 1rem;
+  margin: 1vh;
 }
 
 .tables {
   display: flex;
-  max-height: 600px;
-  margin: 2rem;
+  margin: 2vh;
 }
 
 .table-item{
-  flex: 20;
-  margin: 5rem;
-  min-width: 20rem;
+  flex: 30;
+  margin: 5vw;
+  min-width: 30vw;
+  min-height: 40vh;
+  height: fit-content;
 }
 
 .table-divider {
-  flex: 5;
-  margin: 2rem;
+  flex: 10;
+  margin: 2vw;
 }
 
 nav a{
-  margin: 1rem;
+  margin: 1vw;
 }
 
 .button-group {
@@ -44,14 +52,7 @@ nav a{
 }
 
 .button-group Button {
-  margin: 1rem;
-}
-
-.logo {
-  margin: 1rem;
-  position: relative;
-  top: 0rem;
-  right: 0rem;
+  margin: 2vw;
 }
 
 a,
@@ -67,9 +68,53 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 830px) {
+  div {
+    font-size: smaller;
+  }
+
+  #app {
+    width: 100vw;
+    font-weight: normal;
+    display: inline-block;
+    overflow-y: scroll;
+  }
+
   body {
-    display: flex;
+    margin: 0;
+    width: 100vw;
+    overflow-y: scroll;
+  }
+
+  .tables {
+    display: grid;
+    margin: 2vh;
+  }
+
+  .table-item{
+    margin: 2vw;
+    min-width: 80vw;
+    max-height: 10vh;    
+  }
+  
+  .table-divider {
+    visibility: hidden;
+  }
+
+  .tb-item {
+    font-size: smaller;
+  }
+
+  .button-group button {
+    font-size: smaller;
+  }
+
+  .p-toolbar {
+    padding: .5vh;
+  }
+
+  .wrapper {
+    margin: 0;
   }
 
 }
