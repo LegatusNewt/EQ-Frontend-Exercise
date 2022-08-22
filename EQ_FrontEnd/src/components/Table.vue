@@ -1,8 +1,8 @@
 <template>
-    <el-table :data=data border>
-        <el-table-column prop="x" label="X"/>
-        <el-table-column prop="y" label="Y"/>
-    </el-table>
+    <DataTable  :value="data" :scrollable="true" scrollHeight="50vh">
+        <Column field="x" header="X"/>
+        <Column field="y" header="Y"/>
+    </DataTable>
 </template>
 
 <script>
@@ -18,8 +18,5 @@
 </script>
 
 <style>
-    el-table {
-        width: 50%;
-    }
 
 </style>

@@ -1,14 +1,49 @@
 #app {
+  width: 100vw;
   padding: 2rem;  
   font-weight: normal;
+  display: inline-block;
+  max-height: 100vh;
 }
 
 nav {
-  display: grid;
-  border-style: solid;  
+  display: flex;
+}
+
+.tb-item {
+  margin: 1rem;
+}
+
+.wrapper .a {
+  margin: 1rem;
+}
+
+.tables {
+  display: flex;
+  max-height: 600px;
+  margin: 2rem;
+}
+
+.table-item{
+  flex: 20;
+  margin: 5rem;
+  min-width: 20rem;
+}
+
+.table-divider {
+  flex: 5;
+  margin: 2rem;
 }
 
 nav a{
+  margin: 1rem;
+}
+
+.button-group {
+  display: flex;
+}
+
+.button-group Button {
   margin: 1rem;
 }
 

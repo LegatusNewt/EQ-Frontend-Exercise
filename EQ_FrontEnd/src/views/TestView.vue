@@ -2,7 +2,6 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <button v-on:click='webSocketTester()'>Run Websocket</button>
         <div>
           <h2>Websocket Message Below</h2>
           <p class="msg">{{JSON.stringify(newData)}}</p>
@@ -28,7 +27,7 @@ export default {
     newData() {
       return this.$store.state.newData
     }
-  }
+  },
 }
 
 </script>

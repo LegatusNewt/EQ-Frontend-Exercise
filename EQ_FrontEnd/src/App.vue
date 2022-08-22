@@ -1,6 +1,4 @@
 <script>
-import createWebSocketPlugin from "./plugins/socket";
-
 export default {
   name: 'App',
   methods: {
@@ -16,18 +14,20 @@ export default {
 
 
 <template>
-    <header>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <header>      
       <div class="wrapper">
-        <button @click="connect()">Connect</button>
-        <button @click="disconnect()">Disconnect</button>
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/test">Test</RouterLink>
-        </nav>
+        <ToolBar visible=True>
+          <template #start>
+            <RouterLink class="tb-item" to="/">Home</RouterLink>
+            <RouterLink class="tb-item" to="/test">Test</RouterLink>
+          </template>
+          <template #end>
+            <Button class="tb-item" @click="connect()">Connect</Button>
+            <Button class="tb-item" @click="disconnect()">Disconnect</Button>
+          </template>
+        </ToolBar>
+          
       </div>
     </header>
-
   <RouterView/>
 </template>
