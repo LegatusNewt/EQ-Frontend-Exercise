@@ -2,10 +2,10 @@
 export default {
   name: 'Home',
   computed: {
-    hideGraph() {
+    showGraph() {
       return this.$store.state.showGraph;
     },
-    hideTable() {
+    showTable() {
       return this.$store.state.showTable;
     }
   },
@@ -27,11 +27,11 @@ export default {
     </div>
     <div class="tables">
       <div>
-        <Table v-if="hideTable" class="table-item"/>
+        <Table v-show="showTable" class="table-item"/>
       </div>
-      <Divider v-if="hideTable && hideGraph" class="table-divder" layout="vertical"/>
+      <Divider v-show="showTable && showGraph" class="table-divder" layout="vertical"/>
       <div>
-        <Graph v-if="hideGraph" class="table-item"/>
+        <Graph v-show="showGraph" class="table-item"/>
       </div>
     </div>
 </template>
