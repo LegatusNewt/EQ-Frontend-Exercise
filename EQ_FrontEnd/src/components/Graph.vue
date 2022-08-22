@@ -10,9 +10,12 @@ import { LineChart } from "vue-chart-3";
 
 Chart.register(zoomPlugin, ...registerables);
 
-export default {
+export default defineComponent({
   name: "LineGraph",
   components: { LineChart },
+  setup() {
+    const lineRef = ref();
+  },
   data() {
     return {
       options: {
@@ -34,7 +37,7 @@ export default {
             },
             limits: {
               x: {
-                min: 0,                
+                min: 0,
               },
               y: {
                 min: -1,
@@ -65,5 +68,10 @@ export default {
       };
     },
   },
-};
+  watch: {
+    data(newPoints) {
+        console.log("Hello");
+    }
+  }
+});
 </script>

@@ -2,6 +2,7 @@ const express = require('express');
 const ws = require('ws');
 const app = express();
 const routes = require('./routes')
+const url = require('url')
 
 
 const wsServer = new ws.Server({ noServer: true });
@@ -14,9 +15,14 @@ server.on('upgrade', (request, socket, head) => {
   });
 });
 
-wsServer.on('connection', (ws) => {
+wsServer.on('connection', (ws, req) => {
     console.log('Client connection established');
-    ws.x = 0
+    args = url.parse(req.url, true)
+    if(args.query.start) {
+      ws.x = parseFloat(args.query.start)
+    } else{
+      ws.x = 0
+    }
     ws.on('close', () => console.log("Goodbye Client"));
 })
 
@@ -27,8 +33,9 @@ setInterval(() => {
           x: client.x,
           y: generateData(client.x)
         }
+        step = 1
         client.send(JSON.stringify(data))
-        client.x++
+        client.x += step
         console.log(`Data Sent: ${JSON.stringify(data)}`)
     })
 }, 1000)
