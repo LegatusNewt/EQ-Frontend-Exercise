@@ -11,12 +11,12 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 Vite will automatically inject the ENV variables from the .env file when running in development mode (default for `vite` command). Simply change this url to wherever you are running the nodejs server
 .env
 ```
-VITE_SERVER_URL=localhost:3000
+VITE_WS_SERVER_URL=ws://localhost:3000
 ```
 
 .env.production is used when `vite build` is run. 
 ```
- VITE_SERVER_URL=eq.legate.technology
+ VITE_WS_SERVER_URL=wss://eq.legate.technology
 ```
 
 ### Install Requirements (assuming you like yarn over npm)
