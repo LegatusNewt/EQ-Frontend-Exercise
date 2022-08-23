@@ -22,7 +22,7 @@ server.on('upgrade', (request, socket, head) => {
 wsServer.on('connection', (ws, req) => {
     console.log('Client connection established');
     args = url.parse(req.url, true)
-    if(args.query.start && isNaN(args.query.start)) {
+    if(args.query.start && !isNaN(args.query.start)) {
         ws.x = parseFloat(args.query.start) // float in case a decimal is passed as a start point which would still work
     } else{
       ws.x = 0
