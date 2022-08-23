@@ -1,14 +1,17 @@
 const express = require('express');
 const ws = require('ws');
 const app = express();
-const routes = require('./routes')
-const url = require('url')
+const routes = require('./routes');
+const url = require('url');
+const path = __dirname + "/views";
 
 
 const wsServer = new ws.Server({ noServer: true });
 const server = app.listen(3000);
 
 app.use('/', routes)
+app.use(express.static(path))
+
 server.on('upgrade', (request, socket, head) => {
   wsServer.handleUpgrade(request, socket, head, socket => {
     wsServer.emit('connection', socket, request);
