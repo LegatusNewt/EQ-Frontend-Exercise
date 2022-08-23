@@ -1,7 +1,7 @@
 export default function createWebSocket(store, start) {
   //const url = "eq.legate.technology"; //Prod url
-  const url = import.meta.env.VITE_SERVER_URL;
-  const ws = new WebSocket(`ws://${url}/ws?start=${start}`);
+  const url = import.meta.env.VITE_WS_SERVER_URL;
+  const ws = new WebSocket(`${url}/?start=${start}`);
   ws.onopen = function () {
     //Connect to web socket server
     ws.send("Hello Server");

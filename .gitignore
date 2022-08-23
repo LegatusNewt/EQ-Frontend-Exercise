@@ -15,8 +15,10 @@ dist-ssr
 coverage
 *.local
 
+# Custom
 keys
 *.pem
+*zip
 
 /cypress/videos/
 /cypress/screenshots/
