@@ -8,13 +8,18 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
-Make sure the url in the plugins/socket.js file is set to wherever the Node server is hosted or listening. If you wish to use my hosted backend feel free.
-
+Vite will automatically inject the ENV variables from the .env file when running in development mode (default for `vite` command). Simply change this url to wherever you are running the nodejs server
+.env
 ```
-const url = "localhost:3000";
-//const url = "eq.legate.technology"; //Prod url
+VITE_SERVER_URL=localhost:3000
 ```
 
+.env.production is used when `vite build` is run. 
+```
+ VITE_SERVER_URL=eq.legate.technology
+```
+
+### Install Requirements (assuming you like yarn over npm)
 ```sh
 yarn
 ```
@@ -22,7 +27,7 @@ yarn
 ### Compile and Hot-Reload for Development
 
 ```sh
-yarn dev
+yarn start
 ```
 
 ### Compile and Minify for Production
