@@ -53,6 +53,7 @@ export default defineComponent({
       datasets: [
         {
           label: "Sin Wave",
+          tension: 0.4,
           data: points.map((point) => {
             return point.y;
           }),
