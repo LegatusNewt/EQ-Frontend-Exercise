@@ -3,14 +3,15 @@ const ws = require('ws');
 const app = express();
 const routes = require('./routes');
 const url = require('url');
-const path = __dirname + "/views";
-
+const path = __dirname + '/views';
+const port = process.env.PORT || 3000;
 
 const wsServer = new ws.Server({ noServer: true });
-const server = app.listen(3000);
 
 app.use('/', routes)
 app.use(express.static(path))
+
+const server = app.listen(port, () => console.log(`HTTPS running on port ${port}`));
 
 server.on('upgrade', (request, socket, head) => {
   wsServer.handleUpgrade(request, socket, head, socket => {
@@ -21,8 +22,8 @@ server.on('upgrade', (request, socket, head) => {
 wsServer.on('connection', (ws, req) => {
     console.log('Client connection established');
     args = url.parse(req.url, true)
-    if(args.query.start) {
-      ws.x = parseFloat(args.query.start)
+    if(args.query.start && isNaN(args.query.start)) {
+        ws.x = parseFloat(args.query.start) // float in case a decimal is passed as a start point which would still work
     } else{
       ws.x = 0
     }

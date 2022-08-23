@@ -15,9 +15,6 @@ dist-ssr
 coverage
 *.local
 
-keys
-*.pem
-
 /cypress/videos/
 /cypress/screenshots/
 

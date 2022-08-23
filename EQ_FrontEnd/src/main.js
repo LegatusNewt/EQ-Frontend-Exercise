@@ -1,36 +1,34 @@
-import { createStore } from 'vuex'
-import { createApp } from 'vue'
-import App from './App.vue'
-import store from './store'
-import router from './router'
-import './assets/main.css'
-import PrimeVue from 'primevue/config';
-import StyleClass from 'primevue/styleclass';
+import { createApp } from "vue";
+import App from "./App.vue";
+import store from "./store";
+import router from "./router";
+import "./assets/main.css";
+import PrimeVue from "primevue/config";
+import StyleClass from "primevue/styleclass";
 
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column'
-import Button from 'primevue/button'
-import ToolBar from 'primevue/toolbar'
-import Divider from 'primevue/divider';
+import pvDataTable from "primevue/datatable";
+import pvColumn from "primevue/column";
+import pvButton from "primevue/button";
+import pvToolBar from "primevue/toolbar";
+import pvDivider from "primevue/divider";
 
-import Graph from '/src/components/Graph.vue'
-import Table from '/src/components/Table.vue'
+import SinGraph from "/src/components/Graph.vue";
+import SinTable from "/src/components/Table.vue";
 
 const app = createApp(App);
-
 
 app.use(store);
 app.use(router);
 app.use(PrimeVue);
 
-app.component('Graph', Graph);
-app.component('Table', Table)
-app.component('DataTable', DataTable);
-app.component('Column', Column);
-app.component('Button', Button);
-app.component('ToolBar', ToolBar);
-app.component('Divider', Divider);
+app.component("SinGraph", SinGraph);
+app.component("SinTable", SinTable);
+app.component("pvDataTable", pvDataTable);
+app.component("pvColumn", pvColumn);
+app.component("Button", pvButton);
+app.component("pvToolBar", pvToolBar);
+app.component("pvDivider", pvDivider);
 
-app.directive('styleclass', StyleClass);
+app.directive("styleclass", StyleClass);
 
-app.mount('#app');
+app.mount("#app");

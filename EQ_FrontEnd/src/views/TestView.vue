@@ -4,7 +4,7 @@
       <div class="jumbotron">
         <div>
           <h2>Websocket Message Below</h2>
-          <p class="msg">{{JSON.stringify(newData)}}</p>
+          <p class="msg">{{ JSON.stringify(newData) }}</p>
         </div>
       </div>
     </div>
@@ -25,9 +25,8 @@
 export default {
   computed: {
     newData() {
-      return this.$store.state.newData
-    }
+      return this.$store.state.newData;
+    },
   },
-}
-
+};
 </script>
