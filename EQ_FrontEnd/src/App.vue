@@ -4,6 +4,11 @@ export default {
   mounted() {
     this.connect();
   },
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    }
+  },
   methods: {
     connect() {
       this.$store.dispatch("connect");
@@ -24,8 +29,8 @@ export default {
           <RouterLink class="tb-item" to="/test">Test</RouterLink>
         </template>
         <template #end>
-          <Button class="tb-item" @click="connect()">Connect</Button>
-          <Button class="tb-item" @click="disconnect()">Disconnect</Button>
+          <Button class="tb-item" :disabled="connected" @click="connect()">Connect</Button>
+          <Button class="tb-item" :disabled="!connected" @click="disconnect()">Disconnect</Button>
         </template>
       </pvToolBar>
     </div>

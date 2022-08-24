@@ -14,6 +14,7 @@ export default function createWebSocket(store, start) {
 
   ws.onclose = function () {
     //websocket connection closed
+    store.dispatch("disconnect")
     alert("Connection closed");
   };
   return ws;
